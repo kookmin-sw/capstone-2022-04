@@ -1,77 +1,51 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7029049&assignment_repo_type=AssignmentRepo)
-# Welcome to GitHub
-
-캡스톤 팀 생성을 축하합니다.
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
-
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
-
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
-
-**예시)** 2020년 0조  https://kookmin-sw.github.io/capstone-2020-0/
-
-
-## 내용에 아래와 같은 내용들을 추가하세요.
+# SADS : Spoofing Attack Detection System at Indoor Positioning using BLE
 
 ### 1. 프로잭트 소개
 
-프로젝트
+Bluetooth Low Energy (BLE)를 활용한 실내 위치 측위에서의 스푸핑 공격 감지 기법
 
-### 2. 소개 영상
+본 프로젝트는 BLE 장치의 일대일 통신을 기반으로 비콘 메시지의 수신 시간 간격과 Received Signal Strength Indication (RSSI)를 사용하여 스푸핑 공격을 감지하고 공격자의 비콘 메시지를 특정할 수 있는 보안 방법 및 시스템을 소개합니다.
 
-프로젝트 소개하는 영상을 추가하세요
+### 2. Abstract
 
-### 3. 팀 소개
+The received signal strength indication (RSSI) of the Bluetooth Low Energy (BLE) device varies depending on the distance between the transmitter and the receiver. 
+Due to this characteristic, location positioning techniques using beacon messages (Ad packets) of BLE devices have been actively studied.
+However, since beacon messages that are regularly broadcast by the BLE device are disclosed, so anyone can check the information of beacon messages in a simple way (Beacon scan app, Bluetooth library, etc).
+Beacon messages include not only the company name and type of the BLE device, but also Universal Unique Identifier (UUID) and MAC Address, which act as identifiers, making them very vulnerable to spoofing attacks.
+Therefore, we propose a Spoofing Attack Detection System (SADS) that can detect spoofing attacks using physical elements of beacon messages.
+Based on one-to-one communication between the BLE device and the server, the proposed system detects spoofing attacks regardless of the distance between the tag and the attacker and distinguishes the attacker's beacon message.
 
-팀을 소개하세요.
+### 3. 소개 영상
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+향후 추가 예정
 
-### 4. 사용법
+### 4. 팀 소개
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
+**노용준**
 
-### 5. 기타
-
-추가적인 내용은 자유롭게 작성하세요.
-
-
-## Markdown을 사용하여 내용꾸미기
-
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
+<img src = "https://user-images.githubusercontent.com/28584213/157808058-22792714-98fc-49da-a639-515169c2d017.jpg" width = "20%">
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+🎓 20171616
+📧 n0y0j@kookmin.ac.kr
 ```
 
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<br />
 
-### Support or Contact
+**문성찬**
 
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+<img src = "https://user-images.githubusercontent.com/28584213/158019321-eabfa719-12ae-4342-ad90-de6d5113936a.jpg" width = "20%">
+
+```markdown
+🎓 20171620
+📧 boyzmsc@kookmin.ac.kr
+```
+
+### 5. 사용법
+
+향후 추가 예정
+
+### 6. 기타
+
+향후 추가 예정
