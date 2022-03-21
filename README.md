@@ -1,7 +1,6 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7029049&assignment_repo_type=AssignmentRepo)
 # SADS : Spoofing Attack Detection System at Indoor Positioning using BLE
 
-### 1. 프로잭트 소개
+### 1. 프로젝트 소개
 
 Bluetooth Low Energy (BLE)를 활용한 실내 위치 측위에서의 스푸핑 공격 감지 기법
 
@@ -22,24 +21,34 @@ Based on one-to-one communication between the BLE device and the server, the pro
 
 ### 4. 팀 소개
 
+**김상철 교수님**
+
+<img src = "https://user-images.githubusercontent.com/28584213/159163985-37777cfa-d126-428c-aab1-a038c499af15.png" width = "25%">
+
+```markdown
+🎓 국민대학교 소프트웨어융합대학 교수
+📧 sckim7@kookmin.ac.kr
+📌 프로젝트 지도교수
+```
+
 **노용준**
 
-<img src = "https://user-images.githubusercontent.com/28584213/157808058-22792714-98fc-49da-a639-515169c2d017.jpg" width = "20%">
+<img src = "https://user-images.githubusercontent.com/28584213/157808058-22792714-98fc-49da-a639-515169c2d017.jpg" width = "25%">
 
 ```markdown
 🎓 20171616
 📧 n0y0j@kookmin.ac.kr
+📌 연구, 서버 개발, 실험, 성능 평가
 ```
-
-<br />
 
 **문성찬**
 
-<img src = "https://user-images.githubusercontent.com/28584213/158019321-eabfa719-12ae-4342-ad90-de6d5113936a.jpg" width = "20%">
+<img src = "https://user-images.githubusercontent.com/28584213/158019321-eabfa719-12ae-4342-ad90-de6d5113936a.jpg" width = "25%">
 
 ```markdown
 🎓 20171620
 📧 boyzmsc@kookmin.ac.kr
+📌 연구, 서버 개발, 실험, 보고서 작성, 일정 관리
 ```
 
 ### 5. 사용법
