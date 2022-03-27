@@ -2,9 +2,7 @@
 
 ## 1. Packet Received Time Interval (INT)
 
-$$
-INT = P_t - P_{t-1}
-$$
+![CodeCogsEqn](https://user-images.githubusercontent.com/28584258/160270949-84559003-76b8-4a86-a09e-7126fb43d543.png)
 
 위 식에서 ![img](https://latex.codecogs.com/svg.image?P_{t})는 현재 수신된 패킷의 시간이고, ![img](https://latex.codecogs.com/svg.image?P_{t-1})는 이전에 수신된 패킷의 시간입니다. 
 
