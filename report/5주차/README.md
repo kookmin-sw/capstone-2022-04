@@ -42,13 +42,13 @@
 
 #### 스푸핑 공격 감지 예측에 사용된 데이터 갯수에 따른 정확도 비교
 
-![number of data (INT)](https://user-images.githubusercontent.com/28584213/161962948-1ef0c180-d1f8-4e8a-8428-aa847f1f6ab9.png)
+![Number of Data (INT)](https://user-images.githubusercontent.com/28584213/162246157-e62db646-4c7e-4838-9d2a-7bdc66b3bab3.png)
 
 일정한 규칙성을 보이지만 환경 요인으로 불규칙하게 수신되는 Time Interval 값으로 인해 정확도가 스푸핑 공격 감지 예측에 사용되는 데이터의 갯수에 크게 영향을 받지 않는다는 것을 확인할 수 있습니다.
 
 #### 광고 패킷의 전송 속도에 따른 정확도 비교
 
-![packet speed (INT)](https://user-images.githubusercontent.com/28584213/161962944-16eb0e7e-2541-4a16-b535-4e96ade82959.png)
+![Packet Speed (INT)](https://user-images.githubusercontent.com/28584213/162246159-2af30215-f9f5-4c40-b313-5ed2b8913b5d.png)
 
 수신받는 광고 패킷의 속도가 느릴수록 스푸핑 공격이 수신될 때 더욱 분명하게 감지할 수 있기 때문에 예상대로 광고 패킷의 전송 속도가 느릴수록 정확도가 높아지는 것을 확인할 수 있습니다.
 
@@ -61,13 +61,13 @@
 
 #### 스푸핑 공격 감지 예측에 사용된 데이터 갯수에 따른 정확도 비교
 
-![number of data (RSSI)](https://user-images.githubusercontent.com/28584213/161962954-eace214c-acbe-41f2-b931-6b103662c00f.png)
+![Number of Data (RSSI)](https://user-images.githubusercontent.com/28584213/162246161-7d584871-1e6b-4791-9797-625d4f8ff58e.png)
 
 환경 요인으로 불규칙하게 수신되는 RSSI 값으로 인해 정확도가 스푸핑 공격 감지 예측에 사용되는 데이터의 갯수에 크게 영향을 받지 않는다는 것을 확인할 수 있습니다.
 
 #### Tag와 공격자 사이의 거리에 따른 정확도 비교
 
-![distance (RSSI)](https://user-images.githubusercontent.com/28584213/161962950-73bdbdb1-e8bf-4d99-b107-3c6e2e92ea1b.png)
+![Distance (RSSI)](https://user-images.githubusercontent.com/28584213/162246164-ab6840ae-8a70-415d-b710-b818faa0492c.png)
 
 Tag와 공격자 사이의 거리가 1m 이상일 때 100%의 정확도로 스푸핑 공격을 감지할 수 있지만 둘 사이의 거리가 매우 가까울 때는 낮은 정확도를 갖는다는 것을 확인할 수 있습니다.
 
