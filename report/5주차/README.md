@@ -37,7 +37,7 @@
 
 ## 3. Time Interval만을 사용한 모델과 Detection Phase 모델
 
-본 [실험]()에서는 Time Interval만 사용한 경우와 Detection Phase 모델을 사용한 경우의 정확도 성능을 비교합니다.
+본 [실험](https://github.com/kookmin-sw/capstone-2022-04/blob/main/lab/5%EC%A3%BC%EC%B0%A8/INT_test.ipynb)에서는 Time Interval만 사용한 경우와 Detection Phase 모델을 사용한 경우의 정확도 성능을 비교합니다.
 (DP = Detection Phase)
 
 #### 스푸핑 공격 감지 예측에 사용된 데이터 갯수에 따른 정확도 비교
@@ -56,7 +56,7 @@
 
 ## 4. RSSI만을 사용한 모델과 Detection Phase 모델
 
-본 [실험]()에서는 RSSI만 사용한 경우와 Detection Phase 모델을 사용한 경우의 정확도 성능을 비교합니다.
+본 [실험](https://github.com/kookmin-sw/capstone-2022-04/blob/main/lab/5%EC%A3%BC%EC%B0%A8/RSSI_test.ipynb)에서는 RSSI만 사용한 경우와 Detection Phase 모델을 사용한 경우의 정확도 성능을 비교합니다.
 (DP = Detection Phase)
 
 #### 스푸핑 공격 감지 예측에 사용된 데이터 갯수에 따른 정확도 비교
