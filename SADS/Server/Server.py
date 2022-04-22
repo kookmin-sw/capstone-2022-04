@@ -1,5 +1,9 @@
+from firebase_admin import credentials
+import firebase_admin
 import socket
+import time
 from CreateRandom import CreateRandom
+from Firebase import Firebase
 from DetectionModel import DetectionModel
 
 '''
@@ -10,11 +14,16 @@ class Server():
     def __init__(self, HOST, PORT = 9999):
         self.HOST = HOST
         self.PORT = PORT
-        
-        self.cr = CreateRandom()
+        cred = credentials.Certificate('beacon-bbd26-firebase-adminsdk-wsvjj-82e61b4482.json')
+        firebase_admin.initialize_app(cred)
+
         self.d = DetectionModel()
+        self.cr = CreateRandom()
+        self.fr = Firebase()
         self.client_socket = None
         self.uuid = ''
+        self.data = []
+        self.flag = False
 
     def serverSetting(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -47,8 +56,8 @@ class Server():
         print("-------------------------------------")
 
         # 광고 패킷을 송신하는 기기의 UUID 랜덤 생성 후 AP에게 송신
-        self.uuid = self.cr.createUUID()
-        label = self.uuid
+        # Major, Minor value
+        label = self.uuid + ' ' + str(self.data[0]) + ' ' + str(self.data[1])
         encodeLabel = label.encode(encoding="utf-8")
         self.client_socket.sendall(encodeLabel)
         print("/// Send Label")
@@ -75,5 +84,41 @@ class Server():
                     print("****************************************")
                     print("Detect Spoofing Attack!")
                     print(decodeMsg)
-                    print("****************************************")   
+                    print("****************************************")
+    
+    def listenFirebase(self):
+        doc_public = self.fr.db.collection(u'public').document(u'data')
+        doc_updatePublic = self.fr.db.collection(u'public').document(u'data')
+
+        def on_snapshot(on_snapshot, changes, read_time):
+            for change in changes:
+                if change.type.name == 'ADDED':
+                    self.uuid = self.cr.createUUID()
+                    self.data, en = self.cr.createEncryptionData()
+                    self.fr.setEncryptionData(uuid=self.uuid, en=en)
+                    self.serverSetting()
+                
+        
+        def on_snapshot2(on_snapshot, changes, read_time):
+            for change in changes:
+                if change.type.name == 'MODIFIED':
+                    self.fr.deleteEncryptionData()
+                    self.uuid = self.cr.createUUID()
+                    self.data, en = self.cr.createEncryptionData()
+                    self.fr.setEncryptionData(uuid=self.uuid, en=en)
+            
+                    updateData = self.uuid + ' ' + str(self.data[0]) + ' ' + str(self.data[1])
+                    encodeLabel = updateData.encode(encoding="utf-8")
+                    self.client_socket.sendall(encodeLabel)
+            
+        doc_public.on_snapshot(on_snapshot)
+        doc_updatePublic.on_snapshot(on_snapshot2)
+        
+        while True:
+            if not self.flag:
+                time.sleep(1)
+            else:
+                break
+    
+
            

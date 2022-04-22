@@ -12,6 +12,7 @@ class DetectionModel():
         self.RSSI_c = RSSI()
 
     def detectMode(self, item):
+        
         if self.INT_c.check_INT(curr_time = item['time']):
             if self.RSSI_c.check_rssi(curr = item, prev = self.pre_item):
                 return True
