@@ -4,12 +4,15 @@ import ScanUtility
 import bluetooth._bluetooth as bluez
 
 uuid = ''
+g_major = ''
+g_minor = ''
 client = None
 
 def rcvdBeacon():
         dev_id = 0
         global uuid
-        global time_flag
+        global g_major
+        global g_minor
         global client
         try:
             sock = bluez.hci_open_dev(dev_id)
@@ -42,6 +45,8 @@ def rcvdBeacon():
 
 def initSetting():
     global uuid
+    global g_major
+    global g_minor
     global client
 
     serverHost = '192.168.219.104'
@@ -58,6 +63,7 @@ def initSetting():
 
     # Set UUID
     uuid = splitData[0]
+    g_major, g_minor = int(splitData[1]), int(splitData[2])
 
     return True
 
