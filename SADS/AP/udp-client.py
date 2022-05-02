@@ -27,7 +27,7 @@ def rcvdBeacon():
         
         try:
             while True:
-                returnedList = ScanUtility.parse_events(sock, uuid, 100)
+                returnedList = ScanUtility.parse_events(sock, uuid, g_minor, g_major, 100)
                 if returnedList:
                     for item in returnedList:
                         message = str(index) + ',' + str(item['time']) + ',' + item['uuid'] + ',' + str(item['rssi'])
@@ -52,6 +52,7 @@ def initSetting():
     serverHost = '192.168.219.104'
     PORT = 9999
    
+    # Server로부터 UUID값과 고유 식별자인 Major, Minor 값 수신
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((serverHost, PORT))
     client.sendall("AP".encode())
@@ -63,6 +64,8 @@ def initSetting():
 
     # Set UUID
     uuid = splitData[0]
+    
+    # 고유 식별자인 Major와 Minor 값 설정
     g_major, g_minor = int(splitData[1]), int(splitData[2])
 
     return True

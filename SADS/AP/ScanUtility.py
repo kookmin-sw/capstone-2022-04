@@ -45,6 +45,8 @@ def parse_events(sock, g_uuid, g_minor, g_major, loop_count = 100):
             majorVal = int("".join(major.split()[::-1]), 16)
             minorVal = int("".join(minor.split()[::-1]), 16)
 
+            # Unicast Phase
+            # 고유 식별자인 Major와 Minor 값과 동일한 광고 패킷만을 Server에 송신
             if (uuid == g_uuid) and (g_minor == str(minorVal)) and (g_major == str(majorVal)):
                
                 type = "iBeacon"
