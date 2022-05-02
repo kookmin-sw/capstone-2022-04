@@ -5,7 +5,9 @@ import random
 import string
 
 '''
-createUUID(): 광고 패킷(비콘)의 UUID를 랜덤으로 생성
+createUUID() : 광고 패킷(비콘)의 UUID를 랜덤으로 생성
+createEncryptionData() : 정답 데이터를 생성한 뒤 암호화 진행
+getData() : Galois Field에서 랜덤한 좌푯값을 가져옴
 '''
 class CreateRandom():
     def __init__(self):
@@ -17,7 +19,7 @@ class CreateRandom():
         uuid_candidate = string.ascii_lowercase[0:6] + string.digits
         new_uuid = ''
 
-        # 8 4 4 4 12
+        # 8-4-4-4-12
         for i in range(32):
             if i == 8 or i == 12 or i == 16 or i == 20:
                 new_uuid += '-'
@@ -25,15 +27,21 @@ class CreateRandom():
             new_uuid += random.choice(uuid_candidate)
 
         return new_uuid
-
+    
     def createEncryptionData(self):
+        # 송신기 (Tag)의 공개키 가져옴
         doc = self.fireBase.getPublicKey()
         en = []
 
         if doc.exists:
+            # ECC와 Elgamal 알고리즘을 적용해 암호화
             cs = ElGamal(p=32653, a=1, b=0, numpoints=32978, g=doc.to_dict()['g'], h=doc.to_dict()['h'])
+            
             self.data = self.getData() 
             en = cs.encrypt(self.data)
+            
+            # self.data : 정답 데이터
+            # en : 암호화된 데이터
             return self.data, en
         else:
             print('doc does not exist')

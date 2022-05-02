@@ -3,8 +3,8 @@ from Confidence import Confidence
 import numpy as np
 
 '''
-full_arr(): 예측에 사용되는 데이터를 최대 10000개로 한정하기 위한 함수
-check_INT(): 현재 입력값을 기준으로 Time Interval 검사 진행
+full_arr() : 예측에 사용되는 데이터를 최대 10000개로 한정하기 위한 함수
+check_INT() : 현재 입력값을 기준으로 Time Interval 검사 진행
 '''
 class INT():
     def __init__(self):

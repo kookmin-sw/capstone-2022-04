@@ -1,5 +1,5 @@
 '''
-applyFilter(): 불안정한 RSSI를 평활화
+applyFilter() : 불안정한 RSSI를 평활화
 '''
 class KalmanFilter():
     def __init__(self, processNoise, measurementNoise):

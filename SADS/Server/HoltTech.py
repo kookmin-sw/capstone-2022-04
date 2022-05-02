@@ -1,7 +1,7 @@
 from statsmodels.tsa.api import Holt
 
 '''
-holtForcast(): 홀트의 선형 추세 기법을 활용한 다음 Time Interval 예측
+holtForcast() : 홀트의 선형 추세 기법을 활용한 다음 Time Interval 예측
 '''
 class HoltTech():
     def __init__(self, a):
