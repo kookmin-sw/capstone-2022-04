@@ -1,4 +1,4 @@
-# SADS : Spoofing Attack Detection System at Indoor Positioning using BLE
+# SADS : Spoofing Attack Detection System using BLE Beacon
 
 ### 1. 프로젝트 소개
 
