@@ -26,7 +26,7 @@ def packetToString(packet):
     else:
         return ''.join('%02x' % struct.unpack("B", x)[0] for x in packet)
 
-def parse_events(sock, g_uuid, g_minor, g_major, loop_count = 100):
+def parse_events(sock, g_uuid, loop_count = 100):
     old_filter = sock.getsockopt( bluez.SOL_HCI, bluez.HCI_FILTER, 14)
     flt = bluez.hci_filter_new()
     bluez.hci_filter_all_events(flt)
@@ -37,7 +37,7 @@ def parse_events(sock, g_uuid, g_minor, g_major, loop_count = 100):
         packet = sock.recv(255)
         dataString = packetToString(packet)
 
-        if len(dataString) > 83: 
+        if len(dataString) > 83:
             uuid = dataString[40:48] + "-" + dataString[48:52] + "-" + dataString[52:56] + "-" + dataString[56:60] + "-" + dataString[60:72]
             major = dataString[72:76]
             minor = dataString[76:80]
@@ -45,10 +45,8 @@ def parse_events(sock, g_uuid, g_minor, g_major, loop_count = 100):
             majorVal = int("".join(major.split()[::-1]), 16)
             minorVal = int("".join(minor.split()[::-1]), 16)
 
-            # Unicast Phase
-            # 고유 식별자인 Major와 Minor 값과 동일한 광고 패킷만을 Server에 송신
-            if (uuid == g_uuid) and (g_minor == str(minorVal)) and (g_major == str(majorVal)):
-               
+            if uuid == g_uuid:
+                
                 type = "iBeacon"
 
                 scrambledAddress = dataString[14:26]
@@ -59,7 +57,3 @@ def parse_events(sock, g_uuid, g_minor, g_major, loop_count = 100):
                 
                 resultsArray = [{"type": type, "time": time.time(), "uuid": uuid, "rssi": rssi, "macAddress": macAddress}]
                 return resultsArray
-              
-                
-
-
