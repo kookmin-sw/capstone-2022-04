@@ -7,6 +7,10 @@ from CreateRandom import CreateRandom
 from Firebase import Firebase
 from DetectionModel import DetectionModel
 
+'''
+serverSetting() : AP와 소켓 통신을 위한 연결 작업
+receiveFromAP() : AP가 수신 받는 광고 패킷을 받아 스푸핑 공격 검증
+'''
 class Server():
     def __init__(self, HOST, PORT = 9999):
         self.HOST = HOST

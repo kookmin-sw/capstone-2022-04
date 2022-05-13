@@ -1,7 +1,11 @@
 from firebase_admin import firestore
 from firebase_admin import messaging
-import datetime
 
+'''
+getPublicKey() : 송신기 (Tag)의 공개키를 가져옴
+setEncryptionData() : UUID 정보와 암호화된 정보 업로드
+deleteEncryptionData() : UUID 정보와 암호화된 정보 삭제
+'''
 class Firebase():
     def __init__(self):
         self.db = firestore.client()

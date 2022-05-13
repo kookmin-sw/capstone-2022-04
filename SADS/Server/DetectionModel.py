@@ -1,6 +1,9 @@
 from INT import INT
 from RSSI import RSSI
 
+'''
+detectMode() : 현재 수집된 광고패킷을 기반으로 Time Interval 검사와 RSSI 검사 진행 (= Detection Phase)
+'''
 class DetectionModel():
     def __init__(self):
         self.pre_item = {}

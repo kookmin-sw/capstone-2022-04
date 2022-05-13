@@ -1,3 +1,6 @@
+'''
+applyFilter() : 불안정한 RSSI를 평활화
+'''
 class KalmanFilter():
     
     # processNoise = 0.0 # Process noise

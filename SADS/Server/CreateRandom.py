@@ -4,6 +4,11 @@ from ElGamal import ElGamal
 import random
 import string
 
+'''
+createUUID() : 광고 패킷(비콘)의 UUID를 랜덤으로 생성
+createEncryptionData() : 정답 데이터를 생성한 뒤 암호화 진행
+getData() : Galois Field에서 랜덤한 좌푯값을 가져옴
+'''
 class CreateRandom():
     def __init__(self):
         self.useData = UseData()
@@ -24,13 +29,18 @@ class CreateRandom():
         return new_uuid
 
     def createEncryptionData(self):
+        # 송신기 (Tag)의 공개키 가져옴
         doc = self.fireBase.getPublicKey()
         en = []
 
         if doc.exists:
+            # ECC와 Elgamal 알고리즘을 적용해 암호화
             cs = ElGamal(p=32653, a=1, b=0, numpoints=32978, g=doc.to_dict()['g'], h=doc.to_dict()['h'])
             self.data = self.getData() 
             en = cs.encrypt(self.data)
+
+            # self.data : 정답 데이터
+            # en : 암호화된 데이터
             return self.data, en
         else:
             print('doc does not exist')
