@@ -14,6 +14,7 @@ class GaloisField():
         
         return point
         
+    #4777
     def cal(self, x):
         val = []
         res = ( x**3 + x ) % self.p

@@ -12,6 +12,7 @@ class ElGamal():
     def multiply(self,x,y):
         return self.e.addPoints(x,y)
    
+
     def exponentiate(self,x,n):
         if n < 0:
             x = self.e.inversePoint(x)

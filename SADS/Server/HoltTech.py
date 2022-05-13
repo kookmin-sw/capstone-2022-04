@@ -1,12 +1,24 @@
-from statsmodels.tsa.api import Holt
-
-'''
-holtForcast() : 홀트의 선형 추세 기법을 활용한 다음 Time Interval 예측
-'''
 class HoltTech():
-    def __init__(self, a):
-        self.a = a # 0.1
-    
-    def holtForcast(self, use_INT_arr):
-        fit = Holt(use_INT_arr, initialization_method="estimated").fit(smoothing_level=self.a)
-        return fit.forecast(1)[0]
+    def __init__(self, level, trend):
+        self.level = level
+        self.trend = trend
+
+        self.preL = 0
+        self.preB = 0
+
+    def holtForcast(self, x):
+        
+        if self.preL == 0:
+            self.preL = x
+            self.preB = 0
+            return x
+        
+        l = (self.level * x) + (1 - self.level) * (self.preL + self.preB)
+        b = self.trend * (l - self.preL) + (1 - self.trend) * self.preB
+
+        res = l + b
+
+        self.preL = l
+        self.preB = b
+
+        return res

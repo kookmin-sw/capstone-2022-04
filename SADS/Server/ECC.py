@@ -16,7 +16,7 @@ class ECC():
         else:
             return True
 
-	# Find n*p, Where n is the Number and p the Point
+	# find n*p, where n is the number and p the point
     def multiplumOfPoint(self,p,n):
         if self.checkPoint(p):
             binrep = bin(n)[2:]
