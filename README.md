@@ -1,10 +1,10 @@
-# SADS : Spoofing Attack Detection System using BLE Beacon
+# SADS : Spoofing Attack Detection System at Indoor Positioning using BLE
 
 ### 1. 프로젝트 소개
 
 Bluetooth Low Energy (BLE)를 활용한 실내 위치 측위에서의 스푸핑 공격 감지 기법
 
-본 프로젝트는 BLE 장치의 일대일 통신을 기반으로 비콘 메시지의 수신 시간 간격과 Received Signal Strength Indication (RSSI)를 사용하여 스푸핑 공격을 감지하고 공격자의 비콘 메시지를 특정할 수 있는 보안 방법 및 시스템을 소개합니다.
+본 프로젝트는 BLE 장치와의 일대일 통신을 기반으로 비콘 메시지의 수신 시간 간격과 Received Signal Strength Indicator (RSSI)를 사용하여 스푸핑 공격을 감지하고 공격자의 비콘 메시지를 특정할 수 있는 보안 방법 및 시스템을 소개합니다.
 
 ### 2. Abstract
 
@@ -53,7 +53,21 @@ Based on one-to-one communication between the BLE device and the server, the pro
 
 ### 5. 사용법
 
-향후 추가 예정
+#### Server
+
+* [Server 설치 및 구동 가이드](https://github.com/kookmin-sw/capstone-2022-04/wiki/%5BServer%5D-Install-and-Running-Guide)
+
+#### Anchor Point
+
+* [Anchor Point 설치 및 구동 가이드](https://github.com/kookmin-sw/capstone-2022-04/wiki/%5BAnchor-Point%5D-Install-and-Running-Guide)
+
+#### Tag / Attacker
+
+* [Transmitter 설치 및 구동 가이드](https://github.com/kookmin-sw/capstone-2022-04/wiki/%5BTransmitter%5D-Install-and-Running-Guide)
+
+#### Experiment Manual
+
+* [SADS 모델 실험 매뉴얼](https://github.com/kookmin-sw/capstone-2022-04/wiki/%5BSADS%5D-Experiment-Manual)
 
 ### 6. 기타
 
