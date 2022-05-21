@@ -83,11 +83,11 @@ class Server():
             ackMsg = self.client_socket.recv(1024)
             decodeMsg = ackMsg.decode("utf-8")
             splitedData = decodeMsg.split(',')
-            item = {"time": float(splitedData[1]), "uuid": splitedData[2], "rssi": int(splitedData[3])}
+            item = {"time": float(splitedData[1]), "uuid": splitedData[2], "mac": splitedData[3], "rssi": int(splitedData[4])}
 
             if ackMsg != None:
-
                 if self.timeFlag and not self.dummyFlag:
+                    print("---------------------------------------------------------------------")
                     print(decodeMsg)
                     res = self.d.detectMode(item=item)
 
@@ -102,11 +102,10 @@ class Server():
                     flag = True
                 
                 if flag:
-                    print("****************************************")
-                    print("Detect Spoofing Attack!")
-                    print(decodeMsg)
-                    print("****************************************")   
-                    break   
+                    print("!!! Detect Spoofing Attack !!!")
+                    print("Attacker's Packet: " + decodeMsg)
+                    print("---------------------------------------------------------------------")
+                    break
 
 
     def listenFirebase(self):
@@ -145,12 +144,12 @@ class Server():
     
     def setNonPromise(self):
         self.dummyFlag = True
-        print("****************************************")
-        print("Start Delay Time")
+        print("***************************************************************")
+        print("!!! Start Delay Time !!!")
 
         for _ in range(2):
             if not self.timeFlag:
-                print("Non-promise time ON")
+                print("!!! Non-promise time ON !!!")
 
             if(self.timeFlag == False):
                 self.d.checkFlag()
@@ -161,11 +160,11 @@ class Server():
                 self.startFlag = False
                 self.dummyFlag = False
             else:
-                print("End Delay Time")
-                print("****************************************")
+                print("!!! End Delay Time !!!")
+                print("***************************************************************")
 
             if not self.timeFlag:
-                print("Non-promise time OFF")
+                print("!!! Non-promise time OFF !!!")
 
             self.timeFlag = not self.timeFlag
             self.idx += 1

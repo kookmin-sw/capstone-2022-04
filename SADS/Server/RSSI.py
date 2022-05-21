@@ -49,5 +49,9 @@ class RSSI():
         self.lower, self.upper = self.confi.holtCheck(self.fcast, self.se)
         self.se = np.sqrt(self.power_sum / ( self.idx - 1))
         self.idx += 1
+        print('/// Current RSSI: ', pre_data)
+        print('Prediction Next RSSI: ', self.fcast)
+        print('Calculated Next Lower RSSI: ', self.lower)
+        print('Calculated Next Upper RSSI: ', self.upper)
         
         return False

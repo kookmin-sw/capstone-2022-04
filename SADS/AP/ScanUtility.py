@@ -37,16 +37,11 @@ def parse_events(sock, g_uuid, loop_count = 100):
         packet = sock.recv(255)
         dataString = packetToString(packet)
 
-        if len(dataString) > 83:
+        if len(dataString) > 83: 
             uuid = dataString[40:48] + "-" + dataString[48:52] + "-" + dataString[52:56] + "-" + dataString[56:60] + "-" + dataString[60:72]
-            major = dataString[72:76]
-            minor = dataString[76:80]
-
-            majorVal = int("".join(major.split()[::-1]), 16)
-            minorVal = int("".join(minor.split()[::-1]), 16)
 
             if uuid == g_uuid:
-                
+               
                 type = "iBeacon"
 
                 scrambledAddress = dataString[14:26]
@@ -57,3 +52,7 @@ def parse_events(sock, g_uuid, loop_count = 100):
                 
                 resultsArray = [{"type": type, "time": time.time(), "uuid": uuid, "rssi": rssi, "macAddress": macAddress}]
                 return resultsArray
+              
+                
+
+
