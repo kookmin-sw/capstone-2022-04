@@ -6,7 +6,7 @@ Bluetooth Low Energy (BLE)를 활용한 실내 위치 측위에서의 스푸핑 
 
 본 프로젝트는 BLE 장치와의 일대일 통신을 기반으로 비콘 메시지의 수신 시간 간격과 Received Signal Strength Indicator (RSSI)를 사용하여 스푸핑 공격을 감지하고 공격자의 비콘 메시지를 특정할 수 있는 보안 방법 및 시스템을 소개합니다.
 
-### 프로젝트 구성도
+### 실험 환경
 
 <img src = "https://user-images.githubusercontent.com/28584213/169659561-84ea095e-96b5-4036-b4aa-d517c7e073bd.png" width = "100%">
 
@@ -74,7 +74,3 @@ Based on one-to-one communication between the BLE device and the server, the pro
 
 * ### Experiment Manual
   * [SADS 모델 실험 매뉴얼](https://github.com/kookmin-sw/capstone-2022-04/wiki/%5BSADS%5D-Experiment-Manual)
-
-## 6. 기타
-
-향후 추가 예정
