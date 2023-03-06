@@ -36,8 +36,7 @@ Based on one-to-one communication between the BLE device and the server, the pro
 <img src = "https://user-images.githubusercontent.com/28584213/159163985-37777cfa-d126-428c-aab1-a038c499af15.png" width = "25%">
 
 ```markdown
-🎓 국민대학교 소프트웨어융합대학 교수
-📧 sckim7@kookmin.ac.kr
+🎓 소프트웨어융합대학 교수
 📌 프로젝트 지도교수
 ```
 
@@ -47,7 +46,6 @@ Based on one-to-one communication between the BLE device and the server, the pro
 
 ```markdown
 🎓 20171616
-📧 n0y0j@kookmin.ac.kr
 📌 연구, 서버 개발, 실험, 성능 평가
 ```
 
@@ -57,7 +55,6 @@ Based on one-to-one communication between the BLE device and the server, the pro
 
 ```markdown
 🎓 20171620
-📧 boyzmsc@kookmin.ac.kr
 📌 연구, 서버 개발, 실험, 보고서 작성, 일정 관리
 ```
 
